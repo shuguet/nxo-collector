@@ -154,11 +154,13 @@ root.grid_columnconfigure(3,pad=4)
 
 logo = PhotoImage(file="NXOlogo.gif")
 Label(root, text="").grid(row=0)
-Label(root, text="vCenter Host", justify=LEFT, width=15).grid(row=1,sticky=W)
-Label(root, text="Port", justify=LEFT, width=15).grid(row=5,sticky=W)
-Label(root, text="Username", justify=LEFT, width=15).grid(row=3,sticky=W)
-Label(root, text="Password", justify=LEFT, width=15).grid(row=4,sticky=W)
-Label(root, text="Output File", justify=LEFT, width=15).grid(row=2,sticky=W)
+Label(root, text="vCenter Host", justify=LEFT, width=15,bg="#B8CE52").grid(row=1,sticky=W)
+Label(root, text="Output File", justify=LEFT, width=15,bg="#B8CE52").grid(row=2,sticky=W)
+Label(root, text="Username", justify=LEFT, width=15,bg="#B8CE52").grid(row=3,sticky=W)
+Label(root, text="Password", justify=LEFT, width=15,bg="#B8CE52").grid(row=4,sticky=W)
+Label(root, text="Port", justify=LEFT, width=15,bg="#B8CE52").grid(row=5,sticky=W)
+
+
 Label(root, image=logo, justify=CENTER).grid(row=0, column=0,columnspan=3)
 
 
@@ -171,13 +173,15 @@ username.insert(END, 'administrator@.....')
 password = Entry(root, show= '*',width=15)
 ofile = Entry(root, width=15)
 vcenter.grid(row=1, column=1, sticky=W)
-port.grid(row=5, column=1, sticky=W)
+ofile.grid(row=2, column=1, sticky=W)
 username.grid(row=3, column=1, sticky=W)
 password.grid(row=4, column=1, sticky=W)
-ofile.grid(row=2, column=1, sticky=W)
+port.grid(row=5, column=1, sticky=W)
 
-button_start = Button(root, text='Extract', width=15, command=collect).grid(row=1, column=2, sticky=W, pady=4)
-button_start = Button(root, text='Select File', width=15, command=savefile).grid(row=2, column=2, sticky=W, pady=4)
-button_quit = Button(root, text='Exit', width=15, command=root.destroy).grid(row=5, column=2, sticky=W, pady=4)
+
+
+button_start = Button(root, text='Extract', width=15, command=collect,highlightbackground="#1E4F9C").grid(row=1, column=2, sticky=W, pady=4)
+button_start = Button(root, text='Select File', width=15, command=savefile,highlightbackground="#1E4F9C").grid(row=2, column=2, sticky=W, pady=4)
+button_quit = Button(root, text='Exit', width=15, command=root.destroy,highlightbackground="#1E4F9C").grid(row=5, column=2, sticky=W, pady=4)
 
 root.mainloop()
